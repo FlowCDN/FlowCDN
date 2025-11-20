@@ -1,0 +1,41 @@
+# =============================
+#   FlowCDN – CODEOWNERS
+# =============================
+
+# ----- GitHub config / workflows -----
+.github/**             @FlowCDN/devops 
+
+# ----- Frontend / Dashboard -----
+dashboard/**           @FlowCDN/frontend
+
+# ----- API / Backend / Core logic -----
+src/**                 @FlowCDN/backend
+
+# ----- Database / ORM (Prisma) -----
+prisma/**              @FlowCDN/backend @FlowCDN/devops
+
+# ----- Infrastructure (Docker, Compose, Network, Nginx, TLS, etc.) -----
+nginx/**               @FlowCDN/devops
+docker-compose*.yml    @FlowCDN/devops
+Dockerfile             @FlowCDN/devops
+
+# ----- Deployment / Scripts -----
+scripts/**             @FlowCDN/devops
+
+# ----- Tests -----
+tests/**               @FlowCDN/backend @FlowCDN/devops
+
+# ----- Documentation (tous les .md seront déplacés ici) -----
+docs/**                @FlowCDN/maintainers @FlowCDN/docs
+
+# ----- Config files (Linting, TypeScript, Jest, OpenAPI, etc.) -----
+*.config.*             @FlowCDN/backend
+tsconfig.json          @FlowCDN/backend
+openapi.yaml           @FlowCDN/backend
+*.env*                 @FlowCDN/security
+
+# ----- Security-related content -----
+SECURITY*.md           @FlowCDN/security
+
+# ----- Catch-all (par défaut) -----
+*                      @FlowCDN/administrator
