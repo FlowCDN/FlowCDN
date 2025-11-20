@@ -1,0 +1,90 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+  # ============================
+  # NPM
+  # ============================
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "npm"
+    reviewers:
+      - "FlowCDN/core-team"
+    open-pull-requests-limit: 20
+
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+      major:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+
+  # ============================
+  # Dockerfile
+  # ============================
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+    reviewers:
+      - "FlowCDN/core-team"
+
+    groups:
+      docker-base-images:
+        patterns:
+          - "*"
+
+  # ============================
+  # Docker Compose
+  # ============================
+  - package-ecosystem: "docker-compose"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+    reviewers:
+      - "FlowCDN/core-team"
+
+    groups:
+      compose:
+        patterns:
+          - "*"
+
+  # ============================
+  # GitHub Actions
+  # ============================
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "ci"
+    reviewers:
+      - "FlowCDN/core-team"
+
+    groups:
+      gha-all:
+        patterns:
+          - "*"
+
